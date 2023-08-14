@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <RootNamespace>SubtitleComposer</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+	<UseWindowsForms>true</UseWindowsForms>
+    <Title>Subtitle Composer</Title>
+	<Product>Subtitle Composer</Product>
+	<Authors>Bartosz Kaczorowski</Authors>
+	<Copyright>Copyright © 2023</Copyright>
+	<Description>
+		Subtitle Composer is an application that will be found useful by any translator or subtitle writer.
+		It allows you to comfortably create, edit and save subtitles and corresponding translations for your favourite videos.
+	</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\pause.png" />
+    <None Remove="Resources\play.png" />
+    <None Remove="Resources\stop.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SubtitlePlugin\SubtitlePlugin.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\pause.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\play.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\stop.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MainWindowCommands.xaml.cs">
+      <Generator>MSBuild:Compile</Generator>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
