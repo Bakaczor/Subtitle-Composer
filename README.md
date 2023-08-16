@@ -37,4 +37,4 @@ Plugin library:
 As for now, the library offers support only for SubRip file format (.srt), but others can be added upon request.
 
 ## Contact
-If you have any questions or suggestions feel free to contact me add ordinary.email.address@protonmail.com.
+If you have any questions or suggestions feel free to contact me at ordinary.email.address@protonmail.com.
